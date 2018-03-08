@@ -10,23 +10,26 @@ html {
 }
 
 .clearfix::after {
-  content: "";
-  display: table;
   clear: both;
+  content: '';
+  display: table;
 }
 
 /* Body */
 
 body {
   font-family: $defaultFont;
-  font-weight: $normalWeight;
   font-size: 16px;
+  font-weight: $normalWeight;
 }
 
 /* Header */
 
-header {
+div.headerWrapper {
   background-color: $primaryColor;
+}
+
+header {
   color: $secondaryColor;
   padding: 1rem $gutter;
 
@@ -46,58 +49,148 @@ header {
 nav {
   background-color: $secondaryColor;
 
-  li {
+  ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
     float: left;
     width: 25%;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 
-  li:last-child {
+  ul li:last-child {
     border-right: none;
   }
 
-  li a {
+  ul li a {
+    color: $primaryColor;
     display: block;
-    text-align: center;
     font-weight: $boldWeight;
     padding: 0.5rem 0;
-    color: $primaryColor;
+    text-align: center;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  li.active a {
+  ul li.active a {
     background-color: darken($secondaryColor, 10%);
   }
 
-  li a:hover {
-    color: $secondaryColor;
+  ul li a:hover {
     background-color: $primaryColor;
+    color: $secondaryColor;
   }
 }
 
 /* Main */
 
 main {
+  background-color: white;
+
+  figure.banner {
+    width: 100%;
+  }
+
+  figure.banner img {
+    width: 100%;
+  }
+
   h1 {
-    font-size: 2rem;
-    margin: 1rem 0 0 $gutter;
     color: $primaryColor;
+    font-size: 2rem;
+    font-weight: $boldWeight;
+    margin: 1rem 0 0 $gutter;
+  }
+
+  h2 {
+    color: lighten($primaryColor, 10%);
+    font-size: 1.5rem;
+    font-weight: $boldWeight;
+    margin: 0.75rem 0 0 $gutter;
+  }
+
+  h3 {
+    color: lighten($primaryColor, 20%);
+    font-size: 1.2rem;
+    font-weight: $boldWeight;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  p {
+    color: $fontColor;
+    line-height: 130%;
+  }
+
+  hr.fadeAway {
+    //noinspection Stylelint
+    background: linear-gradient(
+      to right,
+      rgba(66, 78, 100, 1) 0%,
+      rgba(66, 78, 100, 0) 100%
+    );
+    border: none;
+    height: 2px;
+    margin: 0 $gutter 2rem;
+  }
+
+  figure.photo {
+    margin: 0.5rem $gutter;
+    width: 100% - $gutterdbl;
+  }
+
+  figure.photo img {
+    width: 100%;
+  }
+
+  div.pop {
+    background-color: $accent;
+    clear: both;
+    padding: 1rem 0;
+    text-align: center;
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 2rem;
+      font-weight: $boldWeight;
+    }
+
+    .copy {
+      padding: 0.5rem 0;
+    }
+
+    .copy span {
+      color: $primaryColor;
+      font-size: 3rem;
+      font-weight: $boldWeight;
+    }
+  }
+
+  figure.photo figcaption {
+    color: $primaryColor;
+    text-align: center;
+  }
+
+  div.blog article {
+    margin: 0.5rem $gutter;
+    width: 100% - $gutterdbl;
   }
 }
 
 /* Footer */
 
+div.footerWrapper {
+  background-color: $primaryColor;
+}
+
 footer {
   width: 100%;
-  background-color: $primaryColor;
 
   p {
-    text-align: center;
     color: $secondaryColor;
-    padding: 0.75rem 0;
     font-size: 0.9rem;
+    padding: 0.75rem 0;
+    text-align: center;
   }
 
   //noinspection Stylelint

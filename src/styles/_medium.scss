@@ -1,0 +1,18 @@
+/* Main */
+
+main {
+  figure.photo {
+    float: left;
+    margin: 0.5rem $gutter;
+    width: 50% - $gutterdbl;
+  }
+
+  div.blog article {
+    float: left;
+    width: 50% - $gutterdbl;
+  }
+
+  div.blog article:nth-child(2n + 1) {
+    clear: left;
+  }
+}

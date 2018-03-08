@@ -1,0 +1,61 @@
+/* Body */
+
+header,
+nav,
+footer {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url("../images/polonez_car.png");
+}
+
+/* Navigation */
+
+nav {
+  ul {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    margin-left: $gutter;
+  }
+
+  ul li {
+    width: auto;
+  }
+
+  ul li:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  ul li a {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Main */
+
+main {
+  figure.photo {
+    float: left;
+    margin: 0.5rem $gutter;
+    width: 25% - $gutterdbl;
+  }
+
+  section {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  div.blog article {
+    float: left;
+    width: 33.3% - $gutterdbl;
+  }
+
+  div.blog article:nth-child(2n + 1) {
+    clear: none;
+  }
+
+  div.blog article:nth-child(3n + 1) {
+    clear: left;
+  }
+}

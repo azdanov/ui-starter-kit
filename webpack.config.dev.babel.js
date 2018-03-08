@@ -42,6 +42,17 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -58,7 +69,7 @@ module.exports = {
       minify: false
     }),
     new CopyWebpackPlugin(
-      [{ from: 'src/images/*.jpg', to: 'images/[name].[ext]' }]
+      [{ from: 'src/images/*', to: 'images/[name].[ext]' }]
     ),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
