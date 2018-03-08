@@ -1,12 +1,107 @@
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-/* apply a natural box layout model to all elements */
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Body */
+
+body {
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  font-size: 16px;
+}
+
+/* Header */
+
+header {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 1rem $gutter;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: $normalWeight;
+  }
+
+  h2 {
+    font-size: 1.08rem;
+    font-weight: $normalWeight;
+  }
+}
+
+/* Navigation */
+
+nav {
+  background-color: $secondaryColor;
+
+  li {
+    float: left;
+    width: 25%;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    text-align: center;
+    font-weight: $boldWeight;
+    padding: 0.5rem 0;
+    color: $primaryColor;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  li.active a {
+    background-color: darken($secondaryColor, 10%);
+  }
+
+  li a:hover {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+  }
+}
+
+/* Main */
+
+main {
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0 $gutter;
+    color: $primaryColor;
+  }
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  background-color: $primaryColor;
+
+  p {
+    text-align: center;
+    color: $secondaryColor;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+
+  //noinspection Stylelint
+  p a {
+    color: $secondaryColor;
+  }
 }
